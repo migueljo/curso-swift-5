@@ -24,3 +24,4 @@ print("Status code: \(http404Error.0) - Status message: \(http404Error.1)")
 
 let http200Status = (statusCode: 200, statusMessage: "Ok")
 print("Status code: \(http200Status.statusCode) - Status message: \(http200Status.statusMessage)")
+
