@@ -57,3 +57,15 @@ if let firstNumber = Int("4"), let secondNumber = Int("5") {
     print("Could parse to numbers")
 }
 
+
+// Unwrap implicito
+let possibleString: String? = "Optional string"
+let forceString: String = possibleString!
+let assumedString: String! = "Un string"
+let implicitString: String = assumedString
+
+print("assumedString type is: \(type(of: assumedString)) -- implicit string type: \(type(of: implicitString))")
+
+if let definitiveString = assumedString {
+    print("definitiveString type is: \(type(of: definitiveString)) -- its values is \(definitiveString)")
+}
