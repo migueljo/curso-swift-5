@@ -34,10 +34,26 @@ print(type(of: convertedAge)) // Optional(Int)
 var serverResponseCode: Int? = 404
 serverResponseCode = nil
 
-var serveyAnswer: String?
-
-if convertedAge != nil {
-    print("Age exists: \(convertedAge!)")
-} else {
-    print("Age does not exist")
+ if convertedAge != nil {
+     print("Age exists: \(convertedAge!)")
+ } else {
+     print("Age does not exist")
 }
+
+// Optional bindings
+var serveyAnswer: String?
+serveyAnswer = "I'm here"
+
+print("Type of servey answer: \(type(of: serveyAnswer))")
+if let actualAnswer = serveyAnswer {
+    print("Actual answer is: \(actualAnswer) -- type: \(type(of: actualAnswer))")
+} else {
+    print("No answer")
+}
+
+if let firstNumber = Int("4"), let secondNumber = Int("5") {
+    print(firstNumber, secondNumber)
+} else {
+    print("Could parse to numbers")
+}
+
