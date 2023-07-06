@@ -66,3 +66,22 @@ for name in names[1...] {
 for name in names[..<names.count] {
     print("Open range 2: \(name)")
 }
+
+let range = ...5
+range.contains(-3)
+
+for name in names {
+    print("The name is: \(name)")
+}
+
+for closed in 18...28 {
+    print("Closed \(closed)")
+}
+
+for semiOpen in 0..<4 {
+    print("Semi open \(semiOpen)")
+}
+
+for open in names[...2] {
+    print("Open: \(open)")
+}
