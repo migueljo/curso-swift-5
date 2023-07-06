@@ -40,3 +40,29 @@ let defaultAge = 18
 var userAge: Int?
 
 var agetToBeUsed = userAge ?? defaultAge
+
+// Range: Closed, Open, Semi open
+// Closed range: include the first one and last one
+for index in 1...5 {
+    print("Closed range: \(index)")
+}
+// Semi open range: include the first one but not the last one
+for index in 1..<5 {
+    print("Semi open range: \(index)")
+}
+
+let names = ["Miguel", "Andrés", "Mami", "Papa", "Caro"]
+
+for i in 0..<names.count {
+    let name = names[i]
+    print("Current name: \(name)")
+}
+
+// Open range
+for name in names[1...] {
+    print("Open range: \(name)")
+}
+
+for name in names[..<names.count] {
+    print("Open range 2: \(name)")
+}
