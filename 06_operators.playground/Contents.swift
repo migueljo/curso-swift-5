@@ -85,3 +85,27 @@ for semiOpen in 0..<4 {
 for open in names[...2] {
     print("Open: \(open)")
 }
+
+let allowEntry = false
+
+if !allowEntry {
+    print("Acceso denegado")
+}
+
+let enterDoorCode = true
+let passRetinaScan = false
+
+if enterDoorCode && passRetinaScan {
+    print("Acceso concedido")
+} else {
+    print("Acceso denegado")
+}
+
+let hasMoney = true
+let hasInvitation = false
+
+if hasMoney || hasInvitation {
+    print("Bienvenido a la fiesta")
+} else {
+    print("No eres bienvenido aquí")
+}
