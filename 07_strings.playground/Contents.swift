@@ -40,3 +40,18 @@ nameString.append(exclamationMark)
 
 let multiplier = 3
 let message = "El producto de \(multiplier) x 3.5 es \(Double(multiplier) * 3.5)\(exclamationMark)"
+
+let myNameArray = ["M", "i", "g", "u", "e", "l"]
+
+var myNameString = ""
+for char in myNameArray {
+    myNameString.append(char)
+}
+print(myNameString)
+var myNameString2 = myNameArray.joined()
+
+let chosenNumber = 5
+
+for number in 0...10 {
+    print("\(chosenNumber) x \(number) es: \(chosenNumber * number)")
+}
