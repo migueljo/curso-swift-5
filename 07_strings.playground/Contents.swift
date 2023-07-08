@@ -55,3 +55,22 @@ let chosenNumber = 5
 for number in 0...10 {
     print("\(chosenNumber) x \(number) es: \(chosenNumber * number)")
 }
+
+let greeting = "Hola, que tal?"
+greeting[greeting.startIndex]
+greeting[greeting.index(before: greeting.endIndex)]
+
+print(type(of: greeting.startIndex))
+
+for index in greeting.indices {
+    print(greeting[index], terminator: " :)\n")
+}
+
+var welcome = "Hola"
+welcome.insert("!", at: welcome.endIndex)
+welcome.insert(contentsOf: " que tal", at: welcome.index(before: welcome.endIndex))
+
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+
+let range = welcome.index(welcome.startIndex, offsetBy: 4)..<welcome.endIndex
+welcome.removeSubrange(range)
