@@ -74,3 +74,13 @@ welcome.remove(at: welcome.index(before: welcome.endIndex))
 
 let range = welcome.index(welcome.startIndex, offsetBy: 4)..<welcome.endIndex
 welcome.removeSubrange(range)
+
+// Working with substrings
+let commaIndex = greeting.firstIndex(of: ",") ?? greeting.endIndex
+let firstPart = greeting[..<commaIndex]
+// let lastPart = greeting[greeting.index(after: commaIndex)...greeting.index(before: greeting.endIndex)]
+let lastPart = greeting[greeting.index(after: commaIndex)...]
+
+print(type(of: firstPart))
+print(type(of: lastPart))
+print(type(of: String(firstPart)))
