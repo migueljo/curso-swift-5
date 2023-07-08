@@ -84,3 +84,24 @@ let lastPart = greeting[greeting.index(after: commaIndex)...]
 print(type(of: firstPart))
 print(type(of: lastPart))
 print(type(of: String(firstPart)))
+
+// Prefixes Sufixes
+let newGreeting = "Hola, soy Miguel Martínez"
+newGreeting.hasPrefix("Hola")
+newGreeting.hasSuffix("nez")
+
+let collections = [
+    "Act 1, Scene 1", "Act 1, Scene 2", "Act 1, Scene 3", "Act 1, Scene 4", "Act 1, Scene 5",
+    "Act 2, Scene 1", "Act 2, Scene 2", "Act 2, Scene 3",
+    "Act 3, Scene 1", "Act 3, Scene 2"
+]
+
+var act1ScenesCount = 0
+
+for scene in collections {
+    if scene.hasPrefix("Act 1") {
+        act1ScenesCount += 1
+    }
+}
+
+print("El número de escenas del acto 1 es: \(act1ScenesCount)")
