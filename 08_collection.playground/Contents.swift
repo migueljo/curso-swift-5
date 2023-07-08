@@ -59,3 +59,34 @@ shoppingList.enumerated().map({ (index, item) in
     print("The item #\(index) is \(item)")
 })
 
+// Sets
+var letters = Set<Character>("a")
+
+letters.insert("b")
+letters.insert("c")
+letters
+
+var favoriteGames: Set<String> = ["Resident Evil", "Fifa", "Devil may cry"]
+favoriteGames.count
+
+if favoriteGames.isEmpty {
+    print("No hay juegos favoritos")
+} else {
+    print("Los juegos favoritos son: \(favoriteGames)")
+}
+
+favoriteGames.insert("Call of duty")
+favoriteGames.insert("Sekiro")
+favoriteGames.insert("PES")
+
+if let removedGame = favoriteGames.remove("PES") {
+    print("PES was removed")
+}
+
+if favoriteGames.contains("Fifa") {
+    print("Fifa está en tu lista de juegos favoritos")
+}
+
+for (index, game) in favoriteGames.sorted().enumerated() {
+    print("\(index) - \(game) está en tu lista de favoritos")
+}
