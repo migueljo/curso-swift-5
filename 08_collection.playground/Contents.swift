@@ -153,3 +153,45 @@ let familyDictionary = ["mom": "Carmen Martínez", "dad": "Miguel Ángel Martín
 for (relation, name) in familyDictionary {
     print("My \(relation) name is \(name)")
 }
+
+for familyMember in familyDictionary.keys {
+    print("\(familyMember)")
+}
+
+for memberName in familyDictionary.values {
+    print("\(memberName)")
+}
+
+let familyMember = [String](familyDictionary.keys)
+print(familyMember)
+let memberName = [String](familyDictionary.values)
+print(memberName)
+
+/**
+ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+     var min = scores[0]
+     var max = scores[0]
+     var sum = 0
+
+     for score in scores {
+         if score > max {
+             max = score
+         } else if score < min {
+             min = score
+         }
+         sum += score
+     }
+
+
+     return (min, max, sum)
+ }
+ let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+ print(statistics.sum)
+ print(statistics.min)
+ print(statistics.max)
+
+ [1, 2, 3, 4].map({ number in number % 2 != 0 ? 0 : 3 * number })
+ [1, 2, 3, 4].map { number in number % 2 != 0 ? 0 : 3 * number }
+ [1, 2, 3, 4].map { $0 % 2 != 0 ? 0 : 3 * $0 }
+
+ */
