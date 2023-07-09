@@ -148,3 +148,8 @@ if let airportToRemove = airports.removeValue(forKey: "YYZ") {
 airports
 
 // TODO: Create a dictionary with family members
+let familyDictionary = ["mom": "Carmen Martínez", "dad": "Miguel Ángel Martínez", "brother": "Andrés Martínez", "sister": "Carolina"]
+
+for (relation, name) in familyDictionary {
+    print("My \(relation) name is \(name)")
+}
