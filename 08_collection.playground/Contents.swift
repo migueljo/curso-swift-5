@@ -122,3 +122,29 @@ farmAnimals.isSuperset(of: houseAnimals)
 // A y B son disjuntos si su intersección es vacía
 farmAnimals.isDisjoint(with: cityAnimals)
 farmAnimals.intersection(cityAnimals).count == 0
+
+// Dictionaries
+var integerNames: [Int: String] = [Int: String]()
+integerNames = [0: "cero", 1: "uno", 2: "dos", 3: "tres"]
+integerNames[3]
+integerNames = [:]
+
+var airports: [String: String] = [
+    "YYZ": "Toronto",
+    "DUB": "Dublin",
+    "PMI": "Palma de Mallorca"
+]
+airports["LHR"] = "London Heathrow"
+
+let dubAirport = "DUB"
+if let airport = airports[dubAirport] {
+    print("El aeropuerto de \(dubAirport) es: \(airport)")
+}
+airports["PMI"] = nil
+airports.removeValue(forKey: dubAirport)
+if let airportToRemove = airports.removeValue(forKey: "YYZ") {
+    print("El aeropuerto \(airports) ha sido eliminado")
+}
+airports
+
+// TODO: Create a dictionary with family members
