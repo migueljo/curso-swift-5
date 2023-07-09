@@ -90,3 +90,35 @@ if favoriteGames.contains("Fifa") {
 for (index, game) in favoriteGames.sorted().enumerated() {
     print("\(index) - \(game) está en tu lista de favoritos")
 }
+
+let movies: Set = ["Batman", "Avengers", "Tenet", "Tenet"]
+
+let oddDigits: Set = [1, 3, 5, 7, 9]
+let evenDigits: Set = [0, 2, 4, 6, 8, 10]
+let primeNumbers: Set = [2, 3, 5, 7]
+
+// A union B = elementos de A Y B
+oddDigits.union(evenDigits).sorted()
+
+// A intersection B = elementos que están en A y B
+oddDigits.intersection(evenDigits).sorted()
+oddDigits.intersection(primeNumbers).sorted()
+
+// A - B = Elementos que son de A pero no de B
+oddDigits.subtracting(primeNumbers).sorted()
+primeNumbers.subtracting(oddDigits).sorted()
+
+// A differencia simetrica B ( (A - B) union (B - A) ) = Los elementos que solo estén en A y los que solo estén en B
+// Es decir se eliminar los elementos repetidos
+oddDigits.symmetricDifference(primeNumbers).sorted()
+evenDigits.symmetricDifference(primeNumbers).sorted()
+
+let houseAnimals: Set = ["🐶", "😼"]
+let farmAnimals: Set = ["🐄", "🐓", "🐑", "🐶", "😼"]
+let cityAnimals: Set = ["🐀", "🕊️"]
+
+houseAnimals.isSubset(of: farmAnimals)
+farmAnimals.isSuperset(of: houseAnimals)
+// A y B son disjuntos si su intersección es vacía
+farmAnimals.isDisjoint(with: cityAnimals)
+farmAnimals.intersection(cityAnimals).count == 0
