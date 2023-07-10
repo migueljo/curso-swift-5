@@ -122,3 +122,31 @@ default:
     naturalCount = "Hay muchisimas"
 }
 print("\(naturalCount) \(phrase)")
+
+let somePoint = (1,5)
+switch somePoint {
+    case (0, 0):
+        print("El punto \(somePoint) es el origen de coordenadas")
+    case (_, 0):
+        print("El punto \(somePoint) se halla sobre el eje de las X")
+    case (0, _):
+        print("El punto \(somePoint) se halla sobre el eje de las Y")
+    case (-2...2, -2...2):
+        print("El punto \(somePoint) se halla en interior del cuadrado de lado 4")
+    default:
+        print("El punto \(somePoint) está en algún otro lado")
+}
+
+let anotherPoint = (2, 6)
+switch anotherPoint {
+    case (let x, 0):
+        print("Sobre el eje de las X, con valor de \(x)")
+    case (0, let y):
+        print("Sobre el eje de las Y, con valor de \(y)")
+    case let (x, y) where x == y:
+        print("Sobre la recta x = y")
+    case let (x, y) where x == -y:
+        print("Sobre la recta x = -y")
+    case let (x, y):
+        print("En algún otro lugar: x=\(x) y=\(y)")
+}
