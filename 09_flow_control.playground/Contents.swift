@@ -92,6 +92,7 @@ switch someChar {
         print("Es alguna otra letra?")
 }
 
+// Challenge
 func isVowel(letter: String) -> Bool {
     let vowels = "aeiou"
     return vowels.firstIndex(of: Character(letter.lowercased())) != nil ? true : false
@@ -102,3 +103,22 @@ let randomLetters = ["a", "A", "b", "B", "e", "E", "i", "I", "o", "O", "u", "U"]
 for letter in randomLetters {
     print("The letter \"\(letter)\" is a vowel? -> \(isVowel(letter: letter))")
 }
+
+let moons = 1200
+let phrase = "lunas en Saturno"
+let naturalCount: String
+switch moons {
+case 0:
+    naturalCount = "No hay"
+case 1..<5:
+    naturalCount = "Hay unas pocas"
+case 5..<12:
+    naturalCount = "Hay bastantes"
+case 12..<100:
+    naturalCount = "Hay decenas de"
+case 100...1000:
+    naturalCount = "Hay centenares de"
+default:
+    naturalCount = "Hay muchisimas"
+}
+print("\(naturalCount) \(phrase)")
