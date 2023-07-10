@@ -70,3 +70,35 @@ while primeNumberIndex <= primeNumbersLimit {
     primeNumberIndex += 1
 }
 print(primeNumbers)
+
+// If else
+var temp = 15
+if temp <= 15 {
+    print("Hace mucho frío!!")
+} else if temp >= 25 {
+    print("Hace mucho calor!!")
+} else {
+    print("La temperatura es agradable")
+}
+
+// Switch case
+var someChar: Character = "z"
+switch someChar {
+    case "a", "A":
+        print("Primera letra del alfabeto")
+    case "z", "Z":
+        print("Es la última letra del alfabeto")
+    default:
+        print("Es alguna otra letra?")
+}
+
+func isVowel(letter: String) -> Bool {
+    let vowels = "aeiou"
+    return vowels.firstIndex(of: Character(letter.lowercased())) != nil ? true : false
+}
+
+let randomLetters = ["a", "A", "b", "B", "e", "E", "i", "I", "o", "O", "u", "U"]
+
+for letter in randomLetters {
+    print("The letter \"\(letter)\" is a vowel? -> \(isVowel(letter: letter))")
+}
