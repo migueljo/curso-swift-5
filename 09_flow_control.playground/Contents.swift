@@ -214,3 +214,9 @@ func userValidation(person: [String: Any]) {
     print(lastname)
 }
 userValidation(person: person)
+
+if #available(iOS 12, macOS 12.12, *) {
+    print("This feature is available")
+} else {
+    print("Mantener el código viejo")
+}
