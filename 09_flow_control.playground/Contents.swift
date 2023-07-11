@@ -169,3 +169,19 @@ switch yetAnotherPoint {
     default:
         print("no está sobre el eje")
 }
+
+// Control transfer sentences: continue, break, fallthrough, return, throw
+let sentence = "Las mentes grandes piensan igual"
+let charsToRemove: [Character] = ["a", "e", "i", "o", "u"];
+var filteredSentenced = ""
+
+for char in sentence {
+    if charsToRemove.contains(char) {
+        continue
+    }
+    filteredSentenced.append(char)
+    if char == "d" {
+        break
+    }
+}
+print(filteredSentenced)
