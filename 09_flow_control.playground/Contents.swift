@@ -196,3 +196,21 @@ switch integerToDescribe {
         description += " un número entero"
 }
 print(description)
+
+// Return and Guard
+var person: [String: Any] = ["name": "Miguel", "age": 29, "isMale": true]
+print(person)
+
+func userValidation(person: [String: Any]) {
+    if person["lastname"] == nil {
+        print("Lastname is required. if statement")
+        return
+    }
+    guard let lastname = person["lastname"] else {
+        print("Lastname is required")
+        return
+    }
+    // Aqui existe lastname
+    print(lastname)
+}
+userValidation(person: person)
