@@ -185,3 +185,14 @@ for char in sentence {
     }
 }
 print(filteredSentenced)
+
+let integerToDescribe = 5
+var description = "El número \(integerToDescribe) es"
+switch integerToDescribe {
+    case 2, 3, 5, 7, 11, 13, 17, 19:
+        description += " un número primo y"
+        fallthrough
+    default:
+        description += " un número entero"
+}
+print(description)
