@@ -150,3 +150,22 @@ switch anotherPoint {
     case let (x, y):
         print("En algún otro lugar: x=\(x) y=\(y)")
 }
+
+// Casos compuestos
+let someCharacter: Character = "e"
+switch someCharacter {
+case "a", "e", "i", "o", "u":
+    print("Es una vocal")
+case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+    print("Es una consonante")
+default:
+    print("No es una vocal ni consonante")
+}
+
+let yetAnotherPoint = (3, 5)
+switch yetAnotherPoint {
+    case (let distance, 0), (0, let distance):
+        print("Se halla sobre el eje, a distancia \(distance) del origen")
+    default:
+        print("no está sobre el eje")
+}
