@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 func greeting(person: String) -> String {
     let greet = "Hola, \(person)"
@@ -57,3 +58,36 @@ minMax(array: [1, 2, 3, 4, 5, 6])
 if let bounds = minMax(array: [1, 2, 3, 4, 5]) {
     print("min: \(bounds.min), max: \(bounds.max)")
 }
+
+func someFunction(f1 firstParamName: Int, f2 secondParamName: Int = 6) {
+    print(firstParamName + secondParamName)
+}
+
+someFunction(f1: 1, f2: 2)
+someFunction(f1: 4)
+
+func greet3(_ person: String, from homeTown: String) -> String {
+    return "Hola \(person) es un place que nos visites desde \(homeTown)"
+}
+
+greet3("Carmen", from: "Pijiño del Carmen")
+
+func mean(prefix: String, _ numbers: Double..., suffix: String) -> Double {
+    var total: Double = 0
+    for n in numbers {
+        total += n
+    }
+    return total / Double(numbers.count)
+}
+
+mean(prefix: "Mean", 5, 10, 5, 10, 5, 10, suffix: "Mean")
+
+func mediaGeometric(_ numbers: Double...) -> Double {
+    var total: Double = numbers[0]
+    for n in numbers[1...] {
+        total *= n
+    }
+    return pow(total, 1 / Double(numbers.count))
+}
+
+mediaGeometric(10, 10, 10)
