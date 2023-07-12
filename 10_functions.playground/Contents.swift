@@ -91,3 +91,25 @@ func mediaGeometric(_ numbers: Double...) -> Double {
 }
 
 mediaGeometric(10, 10, 10)
+
+var x = 5
+func addOne(number: Int) {
+    var number2 = number
+    number2 += 1
+    print("El número ahora vale \(number2)")
+}
+addOne(number: x)
+
+// inout allow to pass values as references to functions instead of as copies
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    var tempA = a
+    var tempB = b
+    a = tempB
+    b = tempA
+}
+
+var someA = 10
+var someB = 12
+print("\(someA) \(someB)")
+swapTwoInts(&someA, &someB)
+print("\(someA) \(someB)")
