@@ -135,14 +135,14 @@ func printMathResult(_ mathFunc: (Int, Int) -> Int, _ a: Int, _ b: Int) {
 
 printMathResult(mathFunction, 3, 9)
 
-func stepForward(_ input: Int) -> Int {
-    return input + 1
-}
-func stepBackward(_ input: Int) -> Int {
-    return input - 1
-}
-
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    func stepForward(_ input: Int) -> Int {
+        return input + 1
+    }
+    func stepBackward(_ input: Int) -> Int {
+        return input - 1
+    }
+    
     return backward ? stepBackward : stepForward
 }
 
