@@ -72,3 +72,35 @@ let incrementBy7 = makeIncrementer(forIncrement: 7)
 incrementBy7()
 incrementBy7()
 incrementBy7()
+
+// Escaping closures: It's a closure that does not have to execute when we define it
+var completionHandlers: [() -> Void] = []
+
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    completionHandlers.append(completionHandler)
+}
+func someFunctionWithNonEscapingClosure(completionHandler: () -> Void) {
+    completionHandler()
+}
+
+completionHandlers.count
+someFunctionWithEscapingClosure(completionHandler: { print("Completion handler") })
+completionHandlers.count
+
+class SomeClass {
+    var x = 10
+    func doSomething() {
+        someFunctionWithEscapingClosure {
+            self.x = 20
+        }
+        someFunctionWithNonEscapingClosure {
+            x = 100
+        }
+    }
+}
+let instance = SomeClass()
+instance.x
+instance.doSomething()
+instance.x
+completionHandlers[1]()
+instance.x
