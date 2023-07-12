@@ -52,3 +52,23 @@ let numberStrings = [4, 0, 1, 5, -6].map({ n -> String in
     return output
 })
 print(numberStrings)
+
+// Capture closures
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var total = 0
+    func incrementer() -> Int {
+        total += amount
+        return total
+    }
+    return incrementer
+}
+
+let incrementBy5 = makeIncrementer(forIncrement: 5)
+incrementBy5()
+incrementBy5()
+incrementBy5()
+
+let incrementBy7 = makeIncrementer(forIncrement: 7)
+incrementBy7()
+incrementBy7()
+incrementBy7()
