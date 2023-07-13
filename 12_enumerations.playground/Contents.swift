@@ -7,8 +7,8 @@ enum CompassPoint {
     case west
 }
 
-enum Planet {
-    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+enum Planet: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 
 var directionToGo = CompassPoint.east
@@ -64,4 +64,25 @@ switch productBarCode {
         print("UPC: \(numberSystem) \(manufacturer) \(product) \(check)")
     case let .qrCode(value):
         print("QR: \(value)")
+}
+
+enum ASCIIControlCharacter: Character {
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+print(Planet.earth.rawValue)
+
+let possiblePlanet = Planet(rawValue: 5)
+
+if let planet = possiblePlanet {
+    switch planet {
+        case .earth:
+            print("La tierra es segura para vivir")
+        default:
+            print("Este planeta es inhabitable")
+    }
+} else {
+    print("El planeta indicado no existe")
 }
