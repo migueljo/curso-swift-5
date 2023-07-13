@@ -50,3 +50,18 @@ enum MyFavoriteFruits: CaseIterable {
 for fruit in MyFavoriteFruits.allCases {
     print("I love \(fruit)")
 }
+
+enum BarCode {
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+
+var productBarCode = BarCode.upc(8, 87654, 67898, 3)
+// productBarCode = .qrCode("qweasdasdqw")
+
+switch productBarCode {
+    case let .upc(numberSystem, manufacturer, product, check):
+        print("UPC: \(numberSystem) \(manufacturer) \(product) \(check)")
+    case let .qrCode(value):
+        print("QR: \(value)")
+}
