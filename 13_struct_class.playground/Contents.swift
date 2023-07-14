@@ -56,3 +56,16 @@ var oldDirection = currentDirection
 print("\(currentDirection) \(oldDirection)")
 currentDirection = .south
 print("\(currentDirection) \(oldDirection)")
+
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30
+
+tenEighty
+
+tenEighty === alsoTenEighty
