@@ -34,3 +34,25 @@ someVideoMode.resolution.width = 1280
 print(someVideoMode.resolution.width)
 someVideoMode.frameRate = 30.0
 print(someVideoMode.frameRate)
+
+let vga = Resolution(width: 640, height: 480)
+vga.width
+vga.height
+
+let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
+print("\(cinema.width) x \(cinema.height)")
+cinema.height = 1080
+cinema.width = 2048
+print("\(cinema.width) x \(cinema.height)")
+
+enum CompassPoint {
+    case east, west, north, south
+}
+
+var currentDirection = CompassPoint.north
+var oldDirection = currentDirection
+
+print("\(currentDirection) \(oldDirection)")
+currentDirection = .south
+print("\(currentDirection) \(oldDirection)")
