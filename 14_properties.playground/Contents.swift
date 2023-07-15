@@ -31,3 +31,33 @@ manager
 manager.importer.filename
 // Aqui ya está creada
 manager
+
+// Computed properties
+
+struct Point {
+    var x = 0.0, y = 0.0
+}
+
+struct Size {
+    var width = 0.0, height = 0.0
+}
+
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    var center: Point {
+        get {
+            let centerX = size.width / 2 + origin.x
+            let centerY = size.height / 2 + origin.y
+            return Point(x: centerX, y: centerY)
+        }
+        set(newCenter) { // if we remove the newCenter param we can access "newValue" to get the new value
+            origin.x = newCenter.x - size.width / 2
+            origin.y = newCenter.y - size.height / 2
+        }
+    }
+}
+
+var square = Rect(origin: Point(x: 0, y: 0), size: Size(width: 10, height: 10))
+square.center
+square.center = Point(x: 18, y: 3)
