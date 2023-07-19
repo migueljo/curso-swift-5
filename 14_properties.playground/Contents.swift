@@ -61,3 +61,29 @@ struct Rect {
 var square = Rect(origin: Point(x: 0, y: 0), size: Size(width: 10, height: 10))
 square.center
 square.center = Point(x: 18, y: 3)
+
+struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    var volume: Double {
+        return width * height * depth // Read only
+    }
+}
+
+let cuboid = Cuboid(width: 4, height: 6, depth: 2)
+
+cuboid.volume
+// cuboid.volume = 34
+
+class Person {
+    var weight: Double, height: Double
+    init(weight: Double, height: Double) {
+        self.weight = weight
+        self.height = height
+    }
+    var mbi: Double {
+        return self.weight / pow((height / 100), 2)
+    }
+}
+
+let miguel = Person(weight: 85, height: 175)
+miguel.mbi
