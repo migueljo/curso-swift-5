@@ -62,6 +62,7 @@ var square = Rect(origin: Point(x: 0, y: 0), size: Size(width: 10, height: 10))
 square.center
 square.center = Point(x: 18, y: 3)
 
+// Readonly computed properties
 struct Cuboid {
     var width = 0.0, height = 0.0, depth = 0.0
     var volume: Double {
@@ -87,3 +88,41 @@ class Person {
 
 let miguel = Person(weight: 85, height: 175)
 miguel.mbi
+
+// Property observers
+
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) {
+            print("El número de pasos va a subir a \(newTotalSteps)")
+        }
+        
+        didSet {
+            if (totalSteps > oldValue) {
+                print("El número de pasos a incrementado en \(totalSteps - oldValue)")
+            }
+        }
+    }
+}
+
+let steps = StepCounter()
+steps.totalSteps = 10
+steps.totalSteps = 30
+
+class PlayerLife {
+    var life: Double = 0 {
+        willSet(newLifeValue) {
+            print("The life value will be: \(newLifeValue)")
+        }
+        didSet {
+            if life > 100 {
+                life = 100
+            }
+            print("The life value is set to: \(life)")
+        }
+    }
+}
+
+let playerLife = PlayerLife()
+playerLife.life = 99
+playerLife.life = 120
