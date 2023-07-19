@@ -126,3 +126,32 @@ class PlayerLife {
 let playerLife = PlayerLife()
 playerLife.life = 99
 playerLife.life = 120
+
+// Type/Static properties
+struct SomeStruct {
+    var counter = 0
+    static var storedTypeProperty = "Some value"
+    static var computedTypeProperty : Int {
+        return 1
+    }
+}
+
+var instanceStr = SomeStruct()
+
+enum SomeEnum {
+    static var storedTypeProperty = "Enum static property"
+    static var computedTypeProperty: Int {
+        return 5
+    }
+}
+SomeEnum.computedTypeProperty
+
+class SomeClass {
+    static var storedTypeProperty = "Class static value"
+    static var computedTypeProperty: Int {
+        return -9
+    }
+    class var overridableTypeProperty: Int { // This property can be overriden by child classes
+        return 10
+    }
+}
