@@ -59,3 +59,38 @@ class SurveyQuestion {
 
 let q1 = SurveyQuestion(text: "Te gustan los tacos?")
 q1.ask()
+
+// Init designado -> Designado super clase
+// Init conveniencia -> Otro init de la misma clase
+// El último init que se llame siempre debe ser designado
+
+class Vehicle {
+    var wheels = 0
+    var description: String {
+        return "\(wheels) ruedas"
+    }
+}
+
+let vehicle = Vehicle()
+vehicle.description
+
+class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        self.wheels = 2
+    }
+}
+
+class Hoverboard : Vehicle {
+    var color: String
+    init(color: String) {
+        self.color = color
+        // aquí se llama implícitamente a super.init() (Despues de que termine la init)
+    }
+    override var description: String {
+        return "\(super.description) en el color \(self.color)"
+    }
+}
+
+let hoverboard = Hoverboard(color: "amarillo")
+print(hoverboard.description)
