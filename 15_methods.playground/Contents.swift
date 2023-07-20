@@ -131,4 +131,3 @@ if player.tracker.advance(to: 7) {
 } else {
     print("No podemos")
 }
-player
