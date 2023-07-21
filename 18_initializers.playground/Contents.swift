@@ -138,3 +138,36 @@ class CartItem: Product {
 if let someSocks = CartItem(name: "Socks", quantity: 2) {
     print("\(someSocks.name) - \(someSocks.quantity)")
 }
+
+class Bank {
+    static var coinsInBank = 2_000
+    static func distribute(coins numberOfCoinsRequested: Int) -> Int {
+        let numberOfCoinstToVend = min(numberOfCoinsRequested, coinsInBank)
+        Bank.coinsInBank -= numberOfCoinstToVend
+        return numberOfCoinstToVend
+    }
+    static func receive(coins: Int) {
+        coinsInBank += coins
+    }
+}
+
+class Player {
+    var coinsInPurse: Int
+    init(coins: Int) {
+        self.coinsInPurse = Bank.distribute(coins: coins)
+    }
+    func win(coins: Int) {
+        self.coinsInPurse += Bank.distribute(coins: coins)
+    }
+    deinit {
+        Bank.receive(coins: self.coinsInPurse)
+    }
+}
+
+var playerOne: Player? = Player(coins: 100)
+
+Bank.coinsInBank
+playerOne?.win(coins: 2_000)
+Bank.coinsInBank
+playerOne = nil
+Bank.coinsInBank
